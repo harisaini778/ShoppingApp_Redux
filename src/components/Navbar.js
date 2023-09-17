@@ -25,7 +25,8 @@ const NavBar = () => {
                                 <Button className="btn-success m-2"
                                     style={{
                                         fontWeight: "bold",
-                                        color : "white"
+                                        color : "white",
+                                        fontSize : "1rem",
                                     }}>My Cart
                                     <span className="m-2">
                                    <FaShoppingCart size={25}/></span>
