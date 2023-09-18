@@ -3,8 +3,11 @@ import { Container, Navbar, Nav, Button, Badge, Stack } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { UiActions } from "../store/ui-slice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+
+    const cartQuantity = useSelector(state => state.cart.totalQuantity);
     
     const dispatch = useDispatch();
 
@@ -40,7 +43,7 @@ const NavBar = () => {
                                     <span className="m-2">
                                    <FaShoppingCart size={25}/></span>
                                     <Badge className="bg-warning m-1"
-                                    style={{fontWeight:"bolder",fontSize:"1rem"}}>2</Badge> 
+                                        style={{ fontWeight: "bolder", fontSize: "1rem" }}>{cartQuantity}</Badge> 
                           </Button>     
                    </Stack>
                         

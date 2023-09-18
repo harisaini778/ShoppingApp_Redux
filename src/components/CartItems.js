@@ -2,7 +2,9 @@ import React from "react";
 import { Container, Modal, Row, Col, Stack, Button } from "react-bootstrap";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
+
 const CartItems = () => {
+    
 
     return (
         <div>
