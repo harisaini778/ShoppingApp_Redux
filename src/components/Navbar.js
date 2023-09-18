@@ -1,9 +1,16 @@
 import React from "react";
 import { Container, Navbar, Nav, Button, Badge, Stack } from "react-bootstrap";
-import {FaShoppingCart} from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { UiActions } from "../store/ui-slice";
+import { useDispatch } from "react-redux";
 
 const NavBar = () => {
+    
+    const dispatch = useDispatch();
 
+    const toggleCartHandler = () => {
+        dispatch(UiActions.toggle());
+    }
 
     return (
         <div>
@@ -27,7 +34,9 @@ const NavBar = () => {
                                         fontWeight: "bold",
                                         color : "white",
                                         fontSize : "1rem",
-                                    }}>My Cart
+                                    }}
+                                onClick={toggleCartHandler}>
+                                    My Cart
                                     <span className="m-2">
                                    <FaShoppingCart size={25}/></span>
                                     <Badge className="bg-warning m-1"
