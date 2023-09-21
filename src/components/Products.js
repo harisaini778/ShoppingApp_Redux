@@ -3,6 +3,7 @@ import { Container, Button, Modal, Stack } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { CartActions } from "../store/cart-slice";
 
+
 const dummyProducts = [
   {
     id: 1,
@@ -108,8 +109,10 @@ const Products = () => {
               </Modal.Footer>
             </Modal.Dialog>
           </div>
+       
         ))}
       </Container>
+   
     </div>
   );
 };
