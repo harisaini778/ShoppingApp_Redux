@@ -104,9 +104,9 @@ const Products = () => {
                 {/* Pass the product to addToCartHandler */}
                 <Button
                   onClick={() => addToCartHandler(product)}
-                  className="btn-warning"
+                 className="btn-warning"
                   style={{
-                    borderRadius: "15px",
+                    borderRadius: "20px",
                     fontSize: "1.1rem",
                     fontWeight: "bold",
                     color: "white",

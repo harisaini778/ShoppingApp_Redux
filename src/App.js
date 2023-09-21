@@ -6,19 +6,26 @@ import { useSelector,useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { Fragment } from 'react';
 import { UiActions } from './store/ui-slice';
-import Notification from './components/Notification'; // Correct import statement
+import Notification from './components/Notification'; 
+import { useState } from 'react';
+
 
 function App() {
 
   const showCart = useSelector((state) => state.ui.cartIsVisible);
   const notification = useSelector((state) => state.ui.notification);
   console.log("notification is : ", notification);
+  const [isInitial, setIsInitial] = useState(notification===null);
 
   const cart = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
   useEffect(() => {
-  const sendCartData = async () => {
+
+
+    const sendCartData = async () => {
+  
+      
     dispatch(UiActions.showNotification({
       status: "pending",
       title: "Sending...",
@@ -51,7 +58,11 @@ function App() {
     }
   };
 
-    sendCartData();
+  if (!isInitial) {
+      sendCartData();
+    } else {
+      setIsInitial(false);
+  }
     
 }, [cart, dispatch]);
 
