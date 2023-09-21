@@ -31,7 +31,10 @@ const Products = () => {
   return (
     <div>
       <Container className="mt-3">
-        <h1>Buy Your Favorite Products</h1>
+        <h1 className="m-2"
+        style={{fontSize:"3.5rem",
+            fontWeight: "bold",
+            color: "darkgreen"}}>Buy Your Favorite Products Here.</h1>
       </Container>
       <Container className="mt-4">
         {dummyProducts.map((product) => (
