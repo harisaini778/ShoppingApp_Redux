@@ -48,7 +48,7 @@ const CartItems = () => {
                 {cartItems.map((item) => (
                   <div key={item.itemId}>
                     <Row className="m-2 ms-auto">
-                      <Col><h1>{item.name}</h1></Col>
+                      <Col><h3>{item.name}</h3></Col>
                       <Col>
                         <Stack direction="horizontal">
                           <div className="m-1" style={{ fontSize: "1.5rem", fontWeight: "bolder" }}>Rs.{item.price}</div>
@@ -76,10 +76,12 @@ const CartItems = () => {
                     </Row>
                   </div>
                 ))}
+                <Container>
                 <Row>
-                  <Col><h2>Total Items: {totalQuantity}</h2></Col>
-                  <Col><h2>Total Price: Rs.{totalPrice}</h2></Col>
+                  <Col><h4>Total Items: {totalQuantity}</h4></Col>
+                  <Col><h4>Total Price: Rs.{totalPrice}</h4></Col>
                 </Row>
+                </Container>  
               </Container>
             </Modal.Body>
           </Modal.Dialog>

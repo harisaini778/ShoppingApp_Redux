@@ -7,13 +7,13 @@ import { CartActions } from "../store/cart-slice";
 const dummyProducts = [
   {
     id: 1,
-    title: "Product 1",
+    title: "Item-1",
     price: 10,
     description: "This is the first product description.",
   },
   {
     id: 2,
-    title: "Product 2",
+    title: "Item-2",
     price: 15,
     description: "This is the second product description.",
   },
@@ -35,7 +35,12 @@ const Products = () => {
       </Container>
       <Container className="mt-4">
         {dummyProducts.map((product) => (
-          <div key={product.id}>
+          <div key={product.id}
+              className="modal show"
+          style={{
+            display: 'block',
+            position: 'initial'
+          }}>
             <Modal.Dialog>
               <Modal.Header
                 className="p-2"
